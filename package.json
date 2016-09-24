@@ -39,6 +39,17 @@
     "protractor": "4.0.5",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "2.0.2"
+    "typescript": "2.0.2",
+    "eventbrite-node": "^0.1.1",
+    "express": "^4.14.0",
+    "express-stormpath": "^3.1.5",
+    "jquery": "^3.1.0",
+    "lodash": "^4.15.0",
+    "mongodb": "^2.2.9",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.7.0",
+    "superagent": "^2.2.0"
+
+
   }
 }
