@@ -67,7 +67,7 @@ app.put('/api/user', function(req, res) {
 })
 
 //Routes
-app.get('/api/events/category/:name/event/:amount', function(req, res) {
+app.get('/api/events/category/:name/zipcode/:zip/quantity/:amount', function(req, res) {
   // eventHandler.
   eventHandler.findEvents(req, res)
 })
