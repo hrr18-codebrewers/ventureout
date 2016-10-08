@@ -24,7 +24,7 @@ module.exports = {
           console.log('Tm getting events');
 
           // Check if the event is already in DB
-          Event.findEvent(event.id, function() {
+          Event.findEventById(event.id, function() {
 
             // If it's new event, create event obj
             var newEvent  = {

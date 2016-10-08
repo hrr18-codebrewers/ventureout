@@ -11,7 +11,7 @@ export class EventService {
   start: string;
   end: string;
   interest: string;
-  zipCode: string;
+  zipcode: string;
 
 
   constructor(private http: Http,

@@ -21,6 +21,8 @@ export class SearchresultsComponent {
     // On page load, run this to get all events
     this.getEvents();
 
+    // Zip Code d
+
   }
 
   // Side bar search, store input data to shared service
@@ -31,9 +33,13 @@ export class SearchresultsComponent {
     this.eventService.start = form.value.start ? form.value.start + 'T00:00:00Z' : '0000-01-01T00:00:00Z';
     this.eventService.end = form.value.end ? form.value.end + 'T00:00:00Z' : '9999-12-31T00:00:00Z';
     this.eventService.interest = form.value.interests ? form.value.interests.toLowerCase() : '';
+    this.eventService.zipcode = form.value.zipcode ? form.value.zipcode : '';
 
     this.getEvents();
   }
+
+  // Zip Code to City Location Service
+
 
 
   // Get all event method
@@ -44,6 +50,7 @@ export class SearchresultsComponent {
     this.eventService.start = this.eventService.start ? this.eventService.start : '0000-01-01T00:00:00Z';
     this.eventService.end = this.eventService.end ? this.eventService.end : '9999-12-31T00:00:00Z';
     this.eventService.interest = this.eventService.interest ? this.eventService.interest : '';
+    this.eventService.zipcode = form.value.zipcode ? form.value.zipcode : '';
 
     // Invoke http request of getting all events, filtering data based on search inputs
     this.eventService.getEvents()
@@ -57,6 +64,8 @@ export class SearchresultsComponent {
                Date.parse (event.eventStartTime) <= Date.parse (this.eventService.end);
       }).filter( event => {
         return event.genre ? event.genre.toLowerCase().includes(this.eventService.interest) : true;
+      }).filter( event => {
+        return event.address.zip_code.includes(this.eventService.zipcode);
       }),
       error => console.log(error),
       () => {
